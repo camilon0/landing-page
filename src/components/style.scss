@@ -1,6 +1,6 @@
 /* Estilos para el body */
 body {
-  font-family: "Noticia Text", Georgia, "Times New Roman";
+  font-family: "Work Sans", sans-serif;
   background-color: #f7f7f7;
   margin: 0;
   padding: 0;
@@ -15,18 +15,7 @@ header {
   padding: 20px;
   background-color: #fff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  h1 {
-    display: flex;
-    font-size: 30px;
-    font-weight: 700;
-    color: #000000;
-    font-family: "Noticia Text", Georgia, "Times New Roman", serif;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 125%;
-    letter-spacing: normal;
-  }
+
   p {
     color: #696969;
     font-family: Helvetica;
@@ -52,11 +41,26 @@ li {
 
 /* Estilos para el contenido principal */
 main {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  h1 {
+    display: flex;
+    font-size: 30px;
+    font-weight: 700;
+    color: #000000;
+
+    font-size: 48px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 125%;
+    letter-spacing: normal;
+  }
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+  //margin-top: 100px;
+  background-color: #f5f3f0;
 }
 
 h2 {
@@ -66,6 +70,14 @@ h2 {
   text-align: center;
   margin-bottom: 50px;
 }
+h3 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #d61a22;
+  text-align: center;
+  margin-bottom: 50px;
+  padding-top: 40px;
+}
 
 p {
   font-size: 20px;
@@ -74,11 +86,23 @@ p {
   text-align: center;
   margin-bottom: 50px;
 }
+.carouselImg {
+  //position: relative;
+  width: 30%;
+}
+.imgCarrusel {
+  width: 100%;
+  object-fit: cover;
+}
+.sectionOne {
+  padding-top: 20px;
+}
 .sectionTwo {
   padding-bottom: 20px;
+  padding-top: 20px;
 }
 button {
-  background-color: rgb(255, 222, 151);
+  background-color: #23235c;
   color: #fff;
   border: none;
   border-radius: 50px;
@@ -90,8 +114,13 @@ button {
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    background-color: #f3f3a4;
+    background-color: #666;
   }
+}
+.chat-messages {
+  height: 300px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
 }
 
 /* Estilos para el footer */

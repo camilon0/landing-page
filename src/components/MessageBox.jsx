@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ChatBox = () => {
+const MessageBox = () => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
@@ -16,7 +16,7 @@ const ChatBox = () => {
 
   return (
     <div>
-      <h2>Chat Box</h2>
+      <h2>Soy tu asesor de confianza ¿En que te puedo ayudar?</h2>
       <div>
         {messages.map((message, index) => (
           <div key={index}>{message}</div>
@@ -30,4 +30,4 @@ const ChatBox = () => {
   );
 };
 
-export default ChatBox;
+export default MessageBox;

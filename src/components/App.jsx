@@ -1,6 +1,8 @@
 import {
   faFacebook,
   faInstagram,
+  faLinkedin,
+  faSquareYoutube,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -11,11 +13,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-//import Button from "react-bootstrap/Button";
-import { Form, Modal } from "react-bootstrap";
-// import ChatBox from "./ChatBox";
+
+import { Col, Form, Modal, Row } from "react-bootstrap";
+
 // import PopUp from "./PopUp";
+import { Carousel } from "react-bootstrap";
+import MessageBox from "./MessageBox";
 import "./style.scss";
+
+const images = require.context("./assets/img/pruebaimgs", true);
+const logo = require.context("./assets/img/pruebaimgs", true);
 
 const App = () => {
   const [show, setShow] = useState(false);
@@ -23,22 +30,31 @@ const App = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [showChat, setShowChat] = useState(false);
+
+  const handleCloseChat = () => setShowChat(false);
+  const handleShowChat = () => setShowChat(true);
+
   return (
     <>
       <header>
-        <h1>Importancia del SEO en los Portales Web</h1>
-        <section>
-          <p>
-            El SEO es una herramienta fundamental para mejorar la visibilidad de
-            tu sitio web en los motores de <br /> búsqueda y así aumentar el
-            tráfico orgánico a tu página. En esta landing page te presentamos
-            los <br />
-            beneficios del SEO y algunos consejos para optimizar tu sitio web.
-          </p>
-        </section>
+        {" "}
+        <img className="logo" src={images(`./logo1.png`)} alt="s" />
       </header>
       <main>
         <section>
+          <h1>Importancia del SEO en los Portales Web</h1>
+          <section>
+            <p>
+              El SEO es una herramienta fundamental para mejorar la visibilidad
+              de tu sitio web en los motores de <br /> búsqueda y así aumentar
+              el tráfico orgánico a tu página. En esta landing page te
+              presentamos los <br />
+              beneficios del SEO y algunos consejos para optimizar tu sitio web.
+            </p>
+          </section>
+        </section>
+        <section className="sectionOne">
           <h2>Consejos para mejorar el SEO de tu sitio web</h2>
           <ul>
             <li>
@@ -67,13 +83,56 @@ const App = () => {
             </li>
           </ul>
         </section>
+        <div className="empresa">
+          <h3>
+            Estas empresas confiaron en nosotros y han mejorado el SEO de sus
+            páginas web:
+          </h3>
+        </div>
+
+        <div className="carouselImg">
+          <Carousel>
+            <Carousel.Item>
+              <img
+                className="imgCarrusel d-block w-60"
+                src={images(`./1.png`)}
+                alt="s"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="imgCarrusel d-block w-60"
+                src={images(`./2.png`)}
+                alt="s"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="imgCarrusel d-block w-60"
+                src={images(`./3.png`)}
+                alt="s"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="imgCarrusel d-block w-60"
+                src={images(`./4.png`)}
+                alt="s"
+              />
+            </Carousel.Item>
+          </Carousel>
+        </div>
         <section className="sectionTwo">
           <h2>¿Quieres mejorar el SEO de tu sitio web?</h2>
           <p>
-            Contáctanos para recibir una consultoría personalizada y mejorar la
-            visibilidad de tu sitio web.
+            <b>
+              Contáctanos para recibir una consultoría personalizada y mejorar
+              la visibilidad de tu sitio web.
+            </b>
           </p>
-          <button onClick={handleShow}>Contactar</button>
+          <button className="contactar" onClick={handleShow}>
+            Contactar
+          </button>
         </section>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
@@ -114,9 +173,18 @@ const App = () => {
             </button>
           </Modal.Footer>
         </Modal>
+
+        <button onClick={handleShowChat} className="chatbox">
+          Habla con un asesor
+        </button>
+        <Modal show={showChat} onHide={handleCloseChat}>
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body>
+            <MessageBox />
+          </Modal.Body>
+        </Modal>
       </main>
       <footer>
-        <p>Síguenos en redes sociales:</p>
         <ul>
           <li>
             <a href="https://www.facebook.com/">
@@ -133,9 +201,17 @@ const App = () => {
               <FontAwesomeIcon icon={faInstagram} />
             </a>
           </li>
+          <li>
+            <a href="https://www.linkedin.com/feed/">
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com">
+              <FontAwesomeIcon icon={faSquareYoutube} />
+            </a>
+          </li>
         </ul>
-        {/* <PopUp /> */}
-        {/* <ChatBox /> */}
       </footer>
     </>
   );
