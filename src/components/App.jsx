@@ -119,13 +119,19 @@ const App = () => {
         <p>Síguenos en redes sociales:</p>
         <ul>
           <li>
-            <button>Facebook</button>
+            <a href="https://www.facebook.com/">
+              <FontAwesomeIcon icon={faFacebook} />
+            </a>
           </li>
           <li>
-            <button>Twitter</button>
+            <a href="https://twitter.com/home">
+              <FontAwesomeIcon icon={faTwitter} />
+            </a>
           </li>
           <li>
-            <button>Instagram</button>
+            <a href="https://www.instagram.com/">
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
           </li>
         </ul>
         {/* <PopUp /> */}
