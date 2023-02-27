@@ -14,15 +14,15 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 
-import { Col, Form, Modal, Row } from "react-bootstrap";
+import { Form, Modal } from "react-bootstrap";
 
 // import PopUp from "./PopUp";
 import { Carousel } from "react-bootstrap";
 import MessageBox from "./MessageBox";
 import "./style.scss";
 
-const images = require.context("./assets/img/pruebaimgs", true);
-const logo = require.context("./assets/img/pruebaimgs", true);
+const images = require.context("./assets/img", true);
+const logo = require.context("./assets/img", true);
 
 const App = () => {
   const [show, setShow] = useState(false);
@@ -39,7 +39,7 @@ const App = () => {
     <>
       <header>
         {" "}
-        <img className="logo" src={images(`./logo1.png`)} alt="s" />
+        <img className="logo" src={logo(`./logo1.png`)} alt="s" />
       </header>
       <main>
         <section>
